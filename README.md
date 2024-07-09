@@ -30,9 +30,9 @@
 <br />
 
 ![img](./docs/images/1.png)
-- ```HypoNet```의 입력은 ```한 장의 이미지```이다.
-- ```HypoNet```의 출력은 ```다양한 Hyponym(하위 카테고리)```이다.
-- Diffusion Model의 앞단에 Input으로 적용되며, 결론적으로 다양한 이미지를 생성하게 된다.
+1.  ```HypoNet```의 입력은 ```한 장의 이미지```이다.
+2.  ```HypoNet```의 출력은 ```다양한 Hyponym(하위 카테고리)```이다.
+3.  Diffusion Model의 앞단에 Input으로 적용되며, 결론적으로 ```다양한 이미지를 생성```하게 된다.
 
 <br />
 <br />
@@ -46,16 +46,39 @@
 <br />
 <br />
 
-![Hyponet Demo](https://github.com/ramge132/HypoNet/blob/main/docs/demo/Hyponet_demo.mkv?raw=true)
-
-
-
-
-
-![img](./docs/images/output/outputs.png)
-
-- ```OUTPUT``` 프롬프트에 따라 다양한 스타일의 KU를 생성.
+### HypoNet Demo
+![Hyponet Demo](./docs/demo/Hyponet_demo.gif)
+- 원하는 갯수의 Hyponym이 출력된다.
+- 최대 개수는 WordNet(사전)에 등록된 단어 수이다.
 
 <br />
 
-- ```BASEMODEL``` SD 2.1
+### HypoNet + SD 1.5 Demo
+![Hyponet+SD Demo](./docs/demo/Hyponet+SD_dog_demo.gif)
+- Hyponym과 결합된 SD는 다양한 이미지를 생성한다.
+
+<br />
+
+### Hyponet 구조
+![Hyponet](./docs/images/3-11.png)
+
+<br />
+<br />
+
+## 검증 방법
+![img](./docs/images/그림%205-1.bmp)
+1. SD(1.4, 1.5, XL)을 베이스로 다양한 기법을 적용하여 데이터셋을 생성
+2. 어떤 기법을 적용했을 때 가장 지표 점수가 높은지 비교 (Accuracy, FID, IS)
+
+<br />
+
+## 검증 결과
+![img](./docs/images/4-1.png)
+- **<span style="color:lightgreen"> 초록색 </span>**: 실제이미지(CIFAR-10 Train)데이터로 학습시 이미지 분류 정확도
+- **<span style="color:skyblue"> 파란색 </span>**: 각 기법 적용 후 생성된 데이터로 학습시 이미지 분류 정확도
+- **<span style="color:red"> 빨간색 </span>**: HypoNet 적용 후 생성된 데이터로 학습시 이미지 분류 정확도
+
+<br />
+
+> **HypoNet**은 모든 기법들에 비해 **더 높은 정확도를 달성**하였으며   
+특히 1.5모델 기반 데이터는 **실제 이미지로 학습한 모델보다 정확도가 높았다.**
