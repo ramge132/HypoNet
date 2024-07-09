@@ -46,7 +46,8 @@
 <br />
 <br />
 
-![HypoNet Demo](https://github.com/ramge132/HypoNet/blob/main/docs/demo/Hyponet_demo.mkv)
+![Hyponet Demo](https://github.com/ramge132/HypoNet/blob/main/docs/demo/Hyponet_demo.mkv?raw=true)
+
 
 
 
